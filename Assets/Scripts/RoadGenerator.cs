@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    public GameObject RoadSection;
+    //public GameObject RoadSection;
+
+    public GameObject[] RoadSections;
 
     public Transform EndPoint;
 
@@ -19,7 +21,14 @@ public class RoadGenerator : MonoBehaviour
     {
         if (transform.position.z < EndPoint.position.z)
         {
+            /*
             Instantiate(RoadSection, transform.position, transform.rotation);
+            transform.position += new Vector3(0f, 0f, 3.2f);
+            */
+
+            // Рандомная генерация частей дороги
+            int selectSection = Random.Range(0, RoadSections.Length);
+            Instantiate(RoadSections[selectSection], transform.position, transform.rotation);
             transform.position += new Vector3(0f, 0f, 3.2f);
         }
         
