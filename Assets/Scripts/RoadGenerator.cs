@@ -20,7 +20,7 @@ public class RoadGenerator : MonoBehaviour
         if (transform.position.z < EndPoint.position.z)
         {
             Instantiate(RoadSection, transform.position, transform.rotation);
-            transform.position += new Vector3(0f, 0f, 2f);
+            transform.position += new Vector3(0f, 0f, 3.2f);
         }
         
     }
