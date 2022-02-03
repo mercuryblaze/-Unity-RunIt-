@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1847228199968885221}
   - component: {fileID: 4293866503436426235}
+  - component: {fileID: -8211776397518693710}
   m_Layer: 0
   m_Name: obj_cone1
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,11 +41,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847228199969182981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.2587082, y: 0.6919465, z: 0.26694202}
   m_Center: {x: -0.05534762, y: 0.33222717, z: 0.045590244}
+--- !u!114 &-8211776397518693710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847228199969182981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57e288d232d4433597c63fa73133bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1847228199969182983
 GameObject:
   m_ObjectHideFlags: 0

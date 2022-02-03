@@ -22,4 +22,10 @@ public class GameManager : MonoBehaviour
         canMove = CanMove;
         worldSpeed = WorldSpeed;
     }
+
+    public void HitObstacle()
+    {
+        CanMove = false;
+        canMove = false;
+    }
 }

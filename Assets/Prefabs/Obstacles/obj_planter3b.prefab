@@ -105,9 +105,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6794287383322260983}
   - component: {fileID: 4215220228962670897}
+  - component: {fileID: 7802438688238711210}
   m_Layer: 0
   m_Name: obj_planter3b
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,8 +136,20 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6794287383321772503}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5365878, y: 0.7303803, z: 0.6545696}
   m_Center: {x: 0.076917715, y: 0.44953045, z: 0.058242988}
+--- !u!114 &7802438688238711210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794287383321772503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57e288d232d4433597c63fa73133bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
