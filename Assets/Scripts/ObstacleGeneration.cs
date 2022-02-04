@@ -9,13 +9,11 @@ public class ObstacleGeneration : MonoBehaviour
 
     private float ObstaclesGeneratorCounter;
 
-    // Start is called before the first frame update
     void Start()
     {
         ObstaclesGeneratorCounter = TimeBetweenObstacles;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.canMove)

@@ -7,24 +7,35 @@ public class PlayerController : MonoBehaviour
     public GameManager GM;
     public Rigidbody RB;
     public float JumpForce;
+    public Transform Skin;
+    public LayerMask WhatIsGround;
+    public bool OnGround;
+    public Animator Anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GM.CanMove)
         {
-            if (Input.GetMouseButton(0))
+            OnGround = Physics.OverlapSphere(Skin.position, 0.2f, WhatIsGround).Length > 0;
+
+            if (OnGround)
             {
-                // Заставляем игрока прыгать
-                RB.velocity = new Vector3(0f, JumpForce, 0f);
+                if (Input.GetMouseButton(0))
+                {
+                    // Заставляем игрока прыгать
+                    RB.velocity = new Vector3(0f, JumpForce, 0f);
+                }
             }
         }
+
+        // Управление анимациями
+        Anim.SetBool("walking", GM.CanMove);
+        Anim.SetBool("OnGround", OnGround);
     }
 
     public void OnTriggerEnter(Collider other)

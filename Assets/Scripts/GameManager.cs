@@ -10,13 +10,11 @@ public class GameManager : MonoBehaviour
     public static bool canMove;
     public static float worldSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         canMove = CanMove;

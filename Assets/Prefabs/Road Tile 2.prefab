@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7999259237369766695}
   - component: {fileID: 446657456484915000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road Tile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,9 +51,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7999259237369766695}
     m_Modifications:
+    - target: {fileID: 152424, guid: f4d8ced29b687478ebbfcc819ff9bc34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 152426, guid: f4d8ced29b687478ebbfcc819ff9bc34, type: 3}
       propertyPath: m_Name
       value: env_crete1a
+      objectReference: {fileID: 0}
+    - target: {fileID: 152426, guid: f4d8ced29b687478ebbfcc819ff9bc34, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 452426, guid: f4d8ced29b687478ebbfcc819ff9bc34, type: 3}
       propertyPath: m_RootOrder
