@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static float worldSpeed;
     public int CoinsCollected;
 
+    private bool CoinHitThisFrame;
+
     void Start()
     {
         
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         canMove = CanMove;
         worldSpeed = WorldSpeed;
+        CoinHitThisFrame = false;
     }
 
     public void HitObstacle()
@@ -29,6 +32,10 @@ public class GameManager : MonoBehaviour
 
     public void AddCoin()
     {
-        CoinsCollected++;
+        if (!CoinHitThisFrame)
+        {
+            CoinsCollected++;
+            CoinHitThisFrame = true;
+        }
     }
 }
