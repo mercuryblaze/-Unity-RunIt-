@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public bool CanMove;
     public float WorldSpeed;
-
     public static bool canMove;
     public static float worldSpeed;
+    public int CoinsCollected;
 
     void Start()
     {
@@ -25,5 +25,10 @@ public class GameManager : MonoBehaviour
     {
         CanMove = false;
         canMove = false;
+    }
+
+    public void AddCoin()
+    {
+        CoinsCollected++;
     }
 }

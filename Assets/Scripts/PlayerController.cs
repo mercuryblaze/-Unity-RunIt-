@@ -51,5 +51,11 @@ public class PlayerController : MonoBehaviour
 
             RB.velocity = new Vector3(Random.Range(GameManager.worldSpeed / 2f, -GameManager.worldSpeed / 2f), 2.5f, -GameManager.worldSpeed / 2f);
         }
+
+        if (other.tag == "Coin")
+        {
+            GM.AddCoin();
+            Destroy(other.gameObject);
+        }
     }
 }
