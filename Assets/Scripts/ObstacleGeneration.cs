@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleGeneration : MonoBehaviour
 {
+    public GameManager GM;
     public GameObject[] obstacles;
     public float TimeBetweenObstacles;
 
@@ -16,7 +17,7 @@ public class ObstacleGeneration : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.canMove)
+        if (GM.CanMove)
         {
             ObstaclesGeneratorCounter -= Time.deltaTime;
 
@@ -26,6 +27,8 @@ public class ObstacleGeneration : MonoBehaviour
                 Instantiate(obstacles[selectObstacle], transform.position, Quaternion.Euler(0f, Random.Range(-45f, 45f), 0f));
 
                 ObstaclesGeneratorCounter = Random.Range(TimeBetweenObstacles * 1f, TimeBetweenObstacles * 1.5f);
+
+                ObstaclesGeneratorCounter = ObstaclesGeneratorCounter / GM.SpeedMultiplier;
             }
         }
     }

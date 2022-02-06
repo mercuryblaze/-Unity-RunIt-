@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomOutsideGenerator : MonoBehaviour
 {
+    public GameManager GM;
     public float TimeBetweenObjects;
     public GameObject[] objects;
     public Transform MinPoint;
@@ -18,7 +19,7 @@ public class RandomOutsideGenerator : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.canMove)
+        if (GM.CanMove)
         {
             ObjectGenCounter -= Time.deltaTime;
 
@@ -31,7 +32,9 @@ public class RandomOutsideGenerator : MonoBehaviour
 
                 Instantiate(objects[selectObject], genPoint, Quaternion.Euler(0f, Random.Range(-180f, 180f), 0f));
 
-                ObjectGenCounter = Random.Range(TimeBetweenObjects * 0.75f, TimeBetweenObjects * 1.25f);
+                ObjectGenCounter = Random.Range(TimeBetweenObjects * 1f, TimeBetweenObjects * 1.5f);
+
+                ObjectGenCounter = ObjectGenCounter / GM.SpeedMultiplier;
             }
         }
     }

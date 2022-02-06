@@ -2014,6 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f6531f6d8c64b8cbc1125e2ad7aafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 164918500}
   TimeBetweenObjects: 3
   objects:
   - {fileID: 6562746274242584665, guid: b41efb5f14b62473baf8b8e82654a745, type: 3}
@@ -3552,6 +3553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f6531f6d8c64b8cbc1125e2ad7aafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 164918500}
   TimeBetweenObjects: 3
   objects:
   - {fileID: 7697214832087482779, guid: 60037ae35d49d4192a59564f4503997e, type: 3}
@@ -3801,7 +3803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396413204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 25}
+  m_LocalPosition: {x: 0, y: 1.3, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1818966255}
@@ -16600,7 +16602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1751044313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16613,6 +16615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868879b64d27e4f638dd40d10153c57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 164918500}
   obstacles:
   - {fileID: 5821534255302489340, guid: e4c6dbc38b1984a59a029c51d907d95b, type: 3}
   - {fileID: 1847228199969182981, guid: 509348faa85cb4c86ac7a4ba71662e0d, type: 3}
@@ -17040,7 +17043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818966254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 396413206}
