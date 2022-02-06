@@ -11,16 +11,28 @@ public class GameManager : MonoBehaviour
     public int CoinsCollected;
 
     private bool CoinHitThisFrame;
+    private bool GameStarted;
 
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("CoinsCollected"))
+        {
+            CoinsCollected = PlayerPrefs.GetInt("CoinsCollected");
+        }
     }
 
     void Update()
     {
         canMove = CanMove;
         worldSpeed = WorldSpeed;
+
+        if (!GameStarted && Input.GetMouseButtonDown(0))
+        {
+            CanMove = true;
+            canMove = true;
+            GameStarted = true;
+        }
+
         CoinHitThisFrame = false;
     }
 
@@ -28,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         CanMove = false;
         canMove = false;
+
+        PlayerPrefs.SetInt("CoinsCollected", CoinsCollected);
     }
 
     public void AddCoin()
