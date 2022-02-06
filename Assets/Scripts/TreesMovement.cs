@@ -9,7 +9,6 @@ public class TreesMovement : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()

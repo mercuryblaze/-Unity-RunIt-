@@ -29,7 +29,7 @@ public class RandomOutsideGenerator : MonoBehaviour
                 // Выбор рандомной точки для генерации объекта
                 Vector3 genPoint = new Vector3(Random.Range(MinPoint.position.x, MaxPoint.position.x), transform.position.y, transform.position.z);
 
-                Instantiate(objects[selectObject], genPoint, Quaternion.Euler(0f, Random.Range(-45f, 45f), 0f));
+                Instantiate(objects[selectObject], genPoint, Quaternion.Euler(0f, Random.Range(-180f, 180f), 0f));
 
                 ObjectGenCounter = Random.Range(TimeBetweenObjects * 0.75f, TimeBetweenObjects * 1.25f);
             }

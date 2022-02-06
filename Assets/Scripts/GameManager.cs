@@ -13,12 +13,19 @@ public class GameManager : MonoBehaviour
     private bool CoinHitThisFrame;
     private bool GameStarted;
 
+    // Увеличение скорости
+    public float TimeToIncreaseSpeed;
+    public float SpeedMultiplier;
+    private float IncreaseSpeedCounter;
+
     void Start()
     {
         if (PlayerPrefs.HasKey("CoinsCollected"))
         {
             CoinsCollected = PlayerPrefs.GetInt("CoinsCollected");
         }
+
+        IncreaseSpeedCounter = TimeToIncreaseSpeed;
     }
 
     void Update()
@@ -31,6 +38,17 @@ public class GameManager : MonoBehaviour
             CanMove = true;
             canMove = true;
             GameStarted = true;
+        }
+
+        // Увеличение скорости со временем
+        if (CanMove)
+        {
+            IncreaseSpeedCounter -= Time.deltaTime;
+            if (IncreaseSpeedCounter <= 0)
+            {
+                IncreaseSpeedCounter = TimeToIncreaseSpeed;
+                WorldSpeed = WorldSpeed * SpeedMultiplier;
+            }
         }
 
         CoinHitThisFrame = false;

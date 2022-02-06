@@ -1657,6 +1657,8 @@ MonoBehaviour:
   CanMove: 0
   WorldSpeed: 10
   CoinsCollected: 0
+  TimeToIncreaseSpeed: 15
+  SpeedMultiplier: 1.2
 --- !u!4 &164918501
 Transform:
   m_ObjectHideFlags: 0
