@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     public static bool canMove;
     public static float worldSpeed;
     public int CoinsCollected;
+    public GameObject TapMessage;
+    public Text CoinsText;
+    public Text DistanceText;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -22,6 +26,7 @@ public class GameManager : MonoBehaviour
     private float TargetSpeedMultiplier;
     private float WorldSpeedStore;
     private float AccelerationStore;
+    private float DistanceCovered;
 
     void Start()
     {
@@ -35,6 +40,9 @@ public class GameManager : MonoBehaviour
         TargetSpeedMultiplier = SpeedMultiplier;
         WorldSpeedStore = WorldSpeed;
         AccelerationStore = Acceleration;
+
+        CoinsText.text = "Coins: " + CoinsCollected;
+        DistanceText.text = DistanceCovered + "m";
     }
 
     void Update()
@@ -47,6 +55,8 @@ public class GameManager : MonoBehaviour
             CanMove = true;
             canMove = true;
             GameStarted = true;
+
+            TapMessage.SetActive(false);
         }
 
         // Увеличение скорости со временем
@@ -65,6 +75,10 @@ public class GameManager : MonoBehaviour
 
             SpeedMultiplier = Mathf.MoveTowards(SpeedMultiplier, TargetSpeedMultiplier, Acceleration * Time.deltaTime);
             WorldSpeed = WorldSpeedStore * SpeedMultiplier;
+
+            // Пройденное расстояние
+            DistanceCovered += Time.deltaTime * worldSpeed;
+            DistanceText.text = Mathf.Floor(DistanceCovered) + "m";
         }
 
         CoinHitThisFrame = false;
@@ -84,6 +98,8 @@ public class GameManager : MonoBehaviour
         {
             CoinsCollected++;
             CoinHitThisFrame = true;
+
+            CoinsText.text = "Coins: " + CoinsCollected;
         }
     }
 }
