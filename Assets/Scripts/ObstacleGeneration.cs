@@ -26,7 +26,7 @@ public class ObstacleGeneration : MonoBehaviour
                 int selectObstacle = Random.Range(0, obstacles.Length);
                 Instantiate(obstacles[selectObstacle], transform.position, Quaternion.Euler(0f, Random.Range(-45f, 45f), 0f));
 
-                ObstaclesGeneratorCounter = Random.Range(TimeBetweenObstacles * 1f, TimeBetweenObstacles * 1.5f);
+                ObstaclesGeneratorCounter = Random.Range(TimeBetweenObstacles * 1f, TimeBetweenObstacles * 3f);
 
                 ObstaclesGeneratorCounter = ObstaclesGeneratorCounter / GM.SpeedMultiplier;
             }
