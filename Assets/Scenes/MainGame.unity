@@ -1657,8 +1657,10 @@ MonoBehaviour:
   CanMove: 0
   WorldSpeed: 10
   CoinsCollected: 0
-  TimeToIncreaseSpeed: 15
-  SpeedMultiplier: 1.2
+  TimeToIncreaseSpeed: 5
+  SpeedMultiplier: 1
+  Acceleration: 0.75
+  SpeedIncreaseAmount: 1.1
 --- !u!4 &164918501
 Transform:
   m_ObjectHideFlags: 0
@@ -16598,7 +16600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1751044313
 MonoBehaviour:
   m_ObjectHideFlags: 0

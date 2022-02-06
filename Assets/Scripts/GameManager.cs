@@ -16,7 +16,12 @@ public class GameManager : MonoBehaviour
     // Увеличение скорости
     public float TimeToIncreaseSpeed;
     public float SpeedMultiplier;
+    public float Acceleration;
+    public float SpeedIncreaseAmount;
     private float IncreaseSpeedCounter;
+    private float TargetSpeedMultiplier;
+    private float WorldSpeedStore;
+    private float AccelerationStore;
 
     void Start()
     {
@@ -26,6 +31,10 @@ public class GameManager : MonoBehaviour
         }
 
         IncreaseSpeedCounter = TimeToIncreaseSpeed;
+
+        TargetSpeedMultiplier = SpeedMultiplier;
+        WorldSpeedStore = WorldSpeed;
+        AccelerationStore = Acceleration;
     }
 
     void Update()
@@ -47,8 +56,15 @@ public class GameManager : MonoBehaviour
             if (IncreaseSpeedCounter <= 0)
             {
                 IncreaseSpeedCounter = TimeToIncreaseSpeed;
-                WorldSpeed = WorldSpeed * SpeedMultiplier;
+                //WorldSpeed = WorldSpeed * SpeedMultiplier;
+                TargetSpeedMultiplier = TargetSpeedMultiplier * SpeedIncreaseAmount;
+                TimeToIncreaseSpeed = TimeToIncreaseSpeed * 0.95f;
             }
+
+            Acceleration = AccelerationStore * SpeedMultiplier;
+
+            SpeedMultiplier = Mathf.MoveTowards(SpeedMultiplier, TargetSpeedMultiplier, Acceleration * Time.deltaTime);
+            WorldSpeed = WorldSpeedStore * SpeedMultiplier;
         }
 
         CoinHitThisFrame = false;
