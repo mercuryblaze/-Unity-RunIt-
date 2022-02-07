@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject NotEnoughCoinsScreen;
     public PlayerController ThePlayer;
     public GameObject PauseScreen;
+    public GameObject[] Models;
+    public GameObject DefaultChar;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -52,6 +54,18 @@ public class GameManager : MonoBehaviour
 
         CoinsText.text = "Coins: " + CoinsCollected;
         DistanceText.text = DistanceCovered + "m";
+
+        // Поиск и загрузка необходимых моделей персонажей
+        for (int i = 0; i < Models.Length; i++)
+        {
+            if (Models[i].name == PlayerPrefs.GetString("SelectedChar"))
+            {
+                GameObject clone = Instantiate(Models[i], ThePlayer.Skin.position, ThePlayer.Skin.rotation);
+                clone.transform.parent = ThePlayer.Skin;
+                Destroy(clone.GetComponent<Rigidbody>());
+                DefaultChar.SetActive(false);
+            }
+        }
     }
 
     void Update()

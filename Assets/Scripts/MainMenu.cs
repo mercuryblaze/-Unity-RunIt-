@@ -132,4 +132,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("CoinsCollected", CurrentCoins);
         UnlockedCheck();
     }
+
+    public void SelectChar()
+    {
+        PlayerPrefs.SetString("SelectedChar", Chars[CurrentCharacter].name);
+        PlayGame();
+    }
 }
