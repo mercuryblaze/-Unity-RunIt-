@@ -1379,7 +1379,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1257585035}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: UnlockChar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2206,6 +2206,12 @@ MonoBehaviour:
   - {fileID: 2106768210}
   - {fileID: 1344780123}
   CurrentCharacter: 0
+  SwitchPlayButton: {fileID: 1835166679}
+  SwitchUnlockButton: {fileID: 764644134}
+  SwitchGetCoinsButton: {fileID: 1083375309}
+  CurrentCoins: 0
+  CharLockedImage: {fileID: 1621818502}
+  CoinsText: {fileID: 988443591}
 --- !u!1001 &1295461600
 PrefabInstance:
   m_ObjectHideFlags: 0
