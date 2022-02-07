@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public string MainMenuName;
     public GameObject NotEnoughCoinsScreen;
     public PlayerController ThePlayer;
+    public GameObject PauseScreen;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -152,10 +153,31 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(MainMenuName);
+        Time.timeScale = 1f;
     }
 
     public void CloseNotEnoughCoins()
     {
         NotEnoughCoinsScreen.SetActive(false);
+    }
+
+    public void ResumeGame()
+    {
+        PauseScreen.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void PauseGame()
+    {
+        if (Time.timeScale == 1f)
+        {
+            PauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            PauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 }
