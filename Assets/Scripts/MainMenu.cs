@@ -6,20 +6,36 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string LevelToLoad;
-    // Start is called before the first frame update
+
+    public GameObject MainScreen;
+    public GameObject SwitchingScreen;
+    public Transform Camera;
+    public Transform CharSwitchHolder;
+    public float CameraSpeed;
+
+    private Vector3 CamTargetPos;
+
     void Start()
     {
-        
+        CamTargetPos = Camera.position;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        Camera.position = Vector3.Lerp(Camera.position, CamTargetPos, CameraSpeed * Time.deltaTime);
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene(LevelToLoad);
+    }
+
+    public void ChooseChar()
+    {
+        MainScreen.SetActive(false);
+        SwitchingScreen.SetActive(true);
+
+       CamTargetPos = Camera.position + new Vector3(0f, CharSwitchHolder.position.y, 0f);
     }
 }
