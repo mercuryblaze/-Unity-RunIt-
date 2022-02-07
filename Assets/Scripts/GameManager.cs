@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour
     public GameObject TapMessage;
     public Text CoinsText;
     public Text DistanceText;
+    public GameObject DeathScreen;
+    public Text DeathScreenCoins;
+    public Text DeathScreenDistance;
+    public float DeathScreenDelay;
+    public string MainMenuName;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -90,6 +96,18 @@ public class GameManager : MonoBehaviour
         canMove = false;
 
         PlayerPrefs.SetInt("CoinsCollected", CoinsCollected);
+
+        //DeathScreen.SetActive(true);
+        DeathScreenCoins.text = CoinsCollected + " coins!";
+        DeathScreenDistance.text = Mathf.Floor(DistanceCovered) + "m!";
+
+        StartCoroutine("ShowDeathScreen");
+    }
+
+    public IEnumerator ShowDeathScreen()
+    {
+        yield return new WaitForSeconds(DeathScreenDelay);
+        DeathScreen.SetActive(true);
     }
 
     public void AddCoin()
@@ -101,5 +119,25 @@ public class GameManager : MonoBehaviour
 
             CoinsText.text = "Coins: " + CoinsCollected;
         }
+    }
+
+    public void ContinueGame()
+    {
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GetCoins()
+    {
+
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(MainMenuName);
     }
 }

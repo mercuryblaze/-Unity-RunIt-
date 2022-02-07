@@ -1850,6 +1850,11 @@ MonoBehaviour:
   TapMessage: {fileID: 3489567}
   CoinsText: {fileID: 1493922165}
   DistanceText: {fileID: 151664623}
+  DeathScreen: {fileID: 834124247}
+  DeathScreenCoins: {fileID: 1631001299}
+  DeathScreenDistance: {fileID: 1892596017}
+  DeathScreenDelay: 2
+  MainMenuName: MainMenu
   TimeToIncreaseSpeed: 5
   SpeedMultiplier: 1
   Acceleration: 0.75
@@ -8900,7 +8905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &834124248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11060,7 +11065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1043125702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164918499}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1043125702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14110,7 +14127,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1311965644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164918499}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1311965644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15367,7 +15396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436860128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164918500}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1436860128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15545,7 +15586,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446325962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164918500}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1446325962
 MonoBehaviour:
   m_ObjectHideFlags: 0
