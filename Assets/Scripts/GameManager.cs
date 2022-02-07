@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public Text DeathScreenDistance;
     public float DeathScreenDelay;
     public string MainMenuName;
+    public GameObject NotEnoughCoinsScreen;
+    public PlayerController ThePlayer;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -123,7 +125,18 @@ public class GameManager : MonoBehaviour
 
     public void ContinueGame()
     {
-
+        if (CoinsCollected >= 100)
+        {
+            CoinsCollected -= 100;
+            CanMove = true;
+            canMove = true;
+            DeathScreen.SetActive(false);
+            ThePlayer.ResetPlayer();
+        }
+        else
+        {
+            NotEnoughCoinsScreen.SetActive(true);
+        }
     }
 
     public void Restart()
@@ -139,5 +152,10 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(MainMenuName);
+    }
+
+    public void CloseNotEnoughCoins()
+    {
+        NotEnoughCoinsScreen.SetActive(false);
     }
 }

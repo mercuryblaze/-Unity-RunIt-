@@ -11,10 +11,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask WhatIsGround;
     public bool OnGround;
     public Animator Anim;
+    public float InvincibleTime;
+
+    private Vector3 StartPosition;
+    private Quaternion StartRotation;
+    private float InvincibleTimer;
 
     void Start()
     {
-        
+        StartPosition = transform.position;
+        StartRotation = transform.rotation;
     }
 
     void Update()
@@ -36,20 +42,29 @@ public class PlayerController : MonoBehaviour
         // Управление анимациями
         Anim.SetBool("walking", GM.CanMove);
         Anim.SetBool("OnGround", OnGround);
+
+        // Управление неуязвимостью
+        if (InvincibleTimer > 0)
+        {
+            InvincibleTimer -= Time.deltaTime;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Obstacles")
+        if (InvincibleTimer <= 0)
         {
-            Debug.Log("Hit Obstacle");
-            GM.HitObstacle();
+            if (other.tag == "Obstacles")
+            {
+                Debug.Log("Hit Obstacle");
+                GM.HitObstacle();
 
-            //RB.isKinematic = false;
+                //RB.isKinematic = false;
 
-            RB.constraints = RigidbodyConstraints.None;
+                RB.constraints = RigidbodyConstraints.None;
 
-            RB.velocity = new Vector3(Random.Range(GameManager.worldSpeed / 2f, -GameManager.worldSpeed / 2f), 2.5f, -GameManager.worldSpeed / 2f);
+                RB.velocity = new Vector3(Random.Range(GameManager.worldSpeed / 2f, -GameManager.worldSpeed / 2f), 2.5f, -GameManager.worldSpeed / 2f);
+            }
         }
 
         if (other.tag == "Coin")
@@ -57,5 +72,15 @@ public class PlayerController : MonoBehaviour
             GM.AddCoin();
             Destroy(other.gameObject);
         }
+    }
+
+    public void ResetPlayer()
+    {
+        RB.constraints = RigidbodyConstraints.FreezeRotation;
+        transform.rotation = StartRotation;
+        transform.position = StartPosition;
+
+        InvincibleTimer = InvincibleTime;
+
     }
 }
