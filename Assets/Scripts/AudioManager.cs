@@ -17,7 +17,19 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("SoundMuted"))
+        {
+            if (PlayerPrefs.GetInt("SoundMuted") == 1)
+            {
+                MuteAll();
+                MutedImage.SetActive(true);
+                SoundMuted = true;
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("SoundMuted", 0);
+        }
     }
 
     void Update()
@@ -49,6 +61,8 @@ public class AudioManager : MonoBehaviour
         SFXCoin.gameObject.SetActive(false);
         SFXHit.gameObject.SetActive(false);
         SFXJump.gameObject.SetActive(false);
+
+        PlayerPrefs.SetInt("SoundMuted", 1);
     }
 
     public void UnmuteAll()
@@ -59,5 +73,7 @@ public class AudioManager : MonoBehaviour
         SFXCoin.gameObject.SetActive(true);
         SFXHit.gameObject.SetActive(true);
         SFXJump.gameObject.SetActive(true);
+
+        PlayerPrefs.SetInt("SoundMuted", 0);
     }
 }
