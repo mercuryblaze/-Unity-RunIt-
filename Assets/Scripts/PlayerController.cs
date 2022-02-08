@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             OnGround = Physics.OverlapSphere(Skin.position, 0.2f, WhatIsGround).Length > 0;
 
-            if (OnGround)
+            if (OnGround && !IsPointerOverUIObject())
             {
                 if (Input.GetMouseButton(0))
                 {
@@ -82,5 +83,15 @@ public class PlayerController : MonoBehaviour
 
         InvincibleTimer = InvincibleTime;
 
+    }
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        return results.Count > 0;
     }
 }
