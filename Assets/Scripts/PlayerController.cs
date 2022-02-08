@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool OnGround;
     public Animator Anim;
     public float InvincibleTime;
+    public AudioManager AM;
 
     private Vector3 StartPosition;
     private Quaternion StartRotation;
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
                 {
                     // Заставляем игрока прыгать
                     RB.velocity = new Vector3(0f, JumpForce, 0f);
+
+                    AM.SFXJump.Play();
                 }
             }
         }
@@ -65,6 +68,8 @@ public class PlayerController : MonoBehaviour
                 RB.constraints = RigidbodyConstraints.None;
 
                 RB.velocity = new Vector3(Random.Range(GameManager.worldSpeed / 2f, -GameManager.worldSpeed / 2f), 2.5f, -GameManager.worldSpeed / 2f);
+
+                AM.SFXHit.Play();
             }
         }
 
@@ -72,6 +77,9 @@ public class PlayerController : MonoBehaviour
         {
             GM.AddCoin();
             Destroy(other.gameObject);
+
+            AM.SFXCoin.Stop();
+            AM.SFXCoin.Play();
         }
     }
 

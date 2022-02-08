@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject[] Models;
     public GameObject DefaultChar;
+    public AudioManager AM;
 
     private bool CoinHitThisFrame;
     private bool GameStarted;
@@ -123,8 +124,10 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ShowDeathScreen()
     {
+        AM.StopMusic();
         yield return new WaitForSeconds(DeathScreenDelay);
         DeathScreen.SetActive(true);
+        AM.GameOverMusic.Play();
     }
 
     public void AddCoin()
@@ -147,6 +150,9 @@ public class GameManager : MonoBehaviour
             canMove = true;
             DeathScreen.SetActive(false);
             ThePlayer.ResetPlayer();
+
+            AM.StopMusic();
+            AM.GameMusic.Play();
         }
         else
         {

@@ -76,4 +76,11 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetInt("SoundMuted", 0);
     }
+
+    public void StopMusic()
+    {
+        MenuMusic.Stop();
+        GameMusic.Stop();
+        GameOverMusic.Stop();
+    }
 }
