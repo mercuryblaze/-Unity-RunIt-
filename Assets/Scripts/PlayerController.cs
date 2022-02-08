@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Animator Anim;
     public float InvincibleTime;
     public AudioManager AM;
+    public GameObject CoinEffect;
 
     private Vector3 StartPosition;
     private Quaternion StartRotation;
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Coin")
         {
             GM.AddCoin();
+            Instantiate(CoinEffect, other.transform.position, other.transform.rotation);
             Destroy(other.gameObject);
 
             AM.SFXCoin.Stop();

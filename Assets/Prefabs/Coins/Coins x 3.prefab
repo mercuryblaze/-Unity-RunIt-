@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3074315936301535102}
+  - component: {fileID: 2819021140938009956}
   m_Layer: 0
   m_Name: Coins x 3
   m_TagString: Untagged
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2819021140938009956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729540700292375858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57e288d232d4433597c63fa73133bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4959377021577238991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,7 +125,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3209026641352380972, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
 --- !u!1 &5141738015164288070 stripped
 GameObject:
@@ -222,7 +236,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3209026641352380972, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
 --- !u!1 &5590729990181734513 stripped
 GameObject:
@@ -332,7 +347,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3209026641352380972, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 288d46d60794c4b3ba835092aa0983e9, type: 3}
 --- !u!1 &7416845499586355694 stripped
 GameObject:

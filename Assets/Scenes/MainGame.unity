@@ -6426,7 +6426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505854090694228002, guid: 11bb3c8a6c770f243b6653ea43839297, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7505854090694228002, guid: 11bb3c8a6c770f243b6653ea43839297, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13628,6 +13628,7 @@ MonoBehaviour:
   Anim: {fileID: 1160585136}
   InvincibleTime: 2
   AM: {fileID: 2059605297}
+  CoinEffect: {fileID: 345386172909917305, guid: 46b1e3ccc1142434288c73f0fb869aff, type: 3}
 --- !u!95 &1160585136
 Animator:
   serializedVersion: 3
@@ -16289,7 +16290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373399749
 GameObject:
@@ -17082,7 +17083,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8485521580477476393, guid: ed1fdd57fa395468d9b00be3d101f626, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8485521580477476393, guid: ed1fdd57fa395468d9b00be3d101f626, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24191,7 +24192,7 @@ Transform:
   m_LocalScale: {x: 6, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2101197718
 PrefabInstance:
