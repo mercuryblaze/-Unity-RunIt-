@@ -2215,7 +2215,7 @@ MonoBehaviour:
   SwitchPlayButton: {fileID: 1835166679}
   SwitchUnlockButton: {fileID: 764644134}
   SwitchGetCoinsButton: {fileID: 1083375309}
-  CurrentCoins: 0
+  CurrentCoins: 2000
   CharLockedImage: {fileID: 1621818502}
   CoinsText: {fileID: 988443591}
 --- !u!1001 &1295461600
