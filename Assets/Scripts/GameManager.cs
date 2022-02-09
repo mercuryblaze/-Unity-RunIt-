@@ -143,9 +143,9 @@ public class GameManager : MonoBehaviour
 
     public void ContinueGame()
     {
-        if (CoinsCollected >= 100)
+        if (CoinsCollected >= 10)
         {
-            CoinsCollected -= 100;
+            CoinsCollected -= 10;
             CanMove = true;
             canMove = true;
             DeathScreen.SetActive(false);

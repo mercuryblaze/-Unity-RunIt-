@@ -98,7 +98,7 @@ public class MainMenu : MonoBehaviour
 
                 CharLockedImage.SetActive(true);
 
-                if (CurrentCoins < 500)
+                if (CurrentCoins < 50)
                 {
                     SwitchGetCoinsButton.SetActive(true);
                     SwitchUnlockButton.SetActive(false);
@@ -127,7 +127,7 @@ public class MainMenu : MonoBehaviour
 
     public void UnlockChar()
     {
-        CurrentCoins -= 500;
+        CurrentCoins -= 50;
         PlayerPrefs.SetInt(Chars[CurrentCharacter].name, 1);
         PlayerPrefs.SetInt("CoinsCollected", CurrentCoins);
         UnlockedCheck();
